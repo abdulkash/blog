@@ -1,0 +1,32 @@
+mutation CreateBlog($body: String!, $subTitle: String!, $title: String!) {
+  createBlog(body: $body, subTitle: $subTitle, title: $title) {
+    blogPost {
+      id
+      title
+      subTitle
+      body
+      dateCreated
+      deleted
+    }
+  }
+}
+
+mutation UpdateBlog($blogId: String!, $body: String, $subTitle: String, $title: String) {
+  updateBlog(blogId: $blogId, body: $body, subTitle: $subTitle, title: $title) {
+    success
+    blogPost {
+      id
+      title
+      subTitle
+      body
+      dateCreated
+      deleted
+    }
+  }
+}
+
+mutation DeleteBlog($blogId: String!) {
+  deleteBlog(blogId: $blogId) {
+    success
+  }
+}

@@ -1,0 +1,33 @@
+type Query{
+  allBlogPosts: [BlogType]
+  blogPost(blogId: String!): BlogType
+}
+
+type Mutation {
+    createBlog(title:String!,subtitle:String!,body:String!):CreateBlogPost!
+    updateBlog(blogId:String!,title:String!,subtitle:String!,body:String!):UpdateBlogPost!
+    deleteBlog(blogId:String!): DeleteBlogPost
+}
+
+type BlogType {  
+  id: ID!
+  title: String!
+  subTitle: String!
+  body: String!
+  dateCreated: DateTime!
+  deleted: Boolean!
+}
+
+type CreateBlogPost {
+  success: Boolean
+  blogPost: BlogType
+}
+
+type UpdateBlogPost {
+  success: Boolean
+  blogPost: BlogType
+}
+
+type DeleteBlogPost {
+  success: Boolean
+}

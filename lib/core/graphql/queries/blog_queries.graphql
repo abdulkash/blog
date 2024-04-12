@@ -1,0 +1,23 @@
+query AllBlogPosts {
+  allBlogPosts {
+    id
+    title
+    subTitle
+    body
+    dateCreated
+    deleted
+  }
+}
+
+query BlogPost($blogId: String!) {
+  blogPost(blogId: $blogId) {
+    id
+    title
+    subTitle
+    body
+    dateCreated
+    deleted
+  }
+}
+
+
